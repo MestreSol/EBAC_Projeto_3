@@ -83,7 +83,7 @@
 
             // Add task to local storage and update UI
             DATA_AddTask();
-            $('.task-list').append(`<div class="task">
+            $('.task-list').append(`<li class="task">
                                         <div class="description">
                                             <h2 id="task-name">${name}</h2>
                                             <p>${description}</p>
@@ -95,7 +95,7 @@
                                             <button id="editBTN" disabled>Edit</button>
                                             <button id="deletBTN" disabled>Delete</button>
                                         </div>
-                                    </div>`);
+                                    </li>`);
             toggleModalAdd(); // Close the modal after adding the task
         });
     }
@@ -121,7 +121,7 @@
         $('.task-list').html('');
         tasks.forEach(task => {
             if (task.tag == tag) {
-                $('.task-list').append(`<div class="task">
+                $('.task-list').append(`<li class="task">
                                             <div class="description">
                                                 <h2>${task.name}</h2>
                                                 <p>${task.description}</p>
@@ -133,7 +133,7 @@
                                                 <button disabled>Edit</button>
                                                 <button disabled>Delete</button>
                                             </div>
-                                        </div>`);
+                                        </li>`);
             }
         });
     }
@@ -156,7 +156,7 @@
     function DATA_getTasks() {
         var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
         tasks.forEach(task => {
-            var taskHtml = `<div class="task ${task.isDone ? 'done' : ''}">
+            var taskHtml = `<li class="task ${task.isDone ? 'done' : ''}">
                                 <div class="description">
                                     <h2 id="task-name">${task.name}</h2>
                                     <p>${task.description}</p>
@@ -168,7 +168,7 @@
                                     <button id="editBTN" disabled>Edit</button>
                                     <button id="deletBTN" disabled>Delete</button>
                                 </div>
-                            </div>`;
+                            </li>`;
             $('.task-list').append(taskHtml);
         });
     }
