@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>To-Do</title>
+
+    <link rel="stylesheet" href="src/css/index.css">
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="superior-menu">
+                <div>
+                    <h1>To-Do</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a onclick="toggleSideMenu()">My tasks</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="side-menu">
+            <h3>Tags</h3>
+            <ul id="side-menu-tags">
+                <li class="active">
+                    <a>🧓 Tag A</a>
+                </li>
+            </ul>
+            <input type="button" class="close" id="close" value="X" onclick="return toggleSideMenu()"/>            
+        </section>
+        <section class="tasks">
+            <div class="container">
+                <div class="task-list">
+                    
+                </div>
+            </div>
+            </section>
+            <section class="add">
+                <button onclick="toggleModalAdd()">+</button>
+            </section>
+            <section class="modal modalAdd">
+                <div class="container">
+                    <div class="modal-header">
+                        <h2>Add task</h2>
+                        <button onclick="toggleModalAdd()">X</button>
+                    </div>
+                        <div class="modal-content">
+                            <form  id="add-task">
+                                <input type="text" placeholder="Task name" id="name" required>
+                                <input type="text" placeholder="Task description" id="description" required>
+                                <input type="date" placeholder="End-date" id="endDate" required>
+                                <input type="time" placeholder="End-time" id="endTime" required>
+                                    <input type="text" id="tags" placeholder="Tag" list="tagList" required>
+                                    <datalist id="tagList">
+                                        <option value="🧓 Tag A"></option>
+                                    </datalist>
+                                <input type="submit" value="Add task">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="src/js/DOM_Index.js"></script>
+
+    <script>
+            $(document).ready(function() {
+        // Initialize tags and tasks
+        if (localStorage.getItem('tags') == null) {
+            localStorage.setItem('tags', JSON.stringify([]));
+        }
+        DATA_getTasks();
+        DATA_getTags();
+        addNewTask();
+        setActiveTag();
+        setDoneTask();
+        setUndoneTask();
+        deleteTask();
+    });
+    </script>
+</html>
