@@ -1,3 +1,6 @@
 {
-    "liveServer.settings.port": 5502
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
 }
