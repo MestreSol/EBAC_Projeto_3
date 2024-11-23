@@ -1,5 +1,18 @@
-.side-menu {
-  width: 20%;
+import styled, { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #F2F7F2;
+  }
+  .side-menu {
+    width: 20%;
   height: 100vh;
   background-color: #f1f1f1;
   position: fixed;
@@ -199,3 +212,15 @@
 .done button {
   background-color: #d7ffcf;
 }
+
+`
+const Container = styled.div`
+  max-width: 1170px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+`
+
+export default GlobalStyle
+
+export { Container }
