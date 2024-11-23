@@ -11,6 +11,6 @@ export const SideMenu = styled.section`
 `
 
 export const SideMenuTags = styled.ul`
-  list-style:none;
-  padding:0px;
+  list-style: none;
+  padding: 0px;
 `

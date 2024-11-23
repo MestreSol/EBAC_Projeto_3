@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Header from './container/hearder'
 import GlobalStyle, { Container } from './GlobalStyle'
 import SideMenu from './container/side-menu'
+import Tasks from './container/tasks'
 function App() {
   useEffect(() => {
     const sideMenu = document.getElementById('sideMenu')
@@ -29,23 +30,7 @@ function App() {
       <Header />
       <Container>
         <SideMenu></SideMenu>
-        <section className="tasks">
-          <div className="container">
-            <ul className="task-list">
-              <li>
-                <div className="task">
-                  <div className="task-header">
-                    <h3>Task name</h3>
-                    <button className="delete">X</button>
-                  </div>
-                  <p>Task description</p>
-                  <p>End: 2021-09-30 23:59</p>
-                  <p>Tag: 🧓 Tag A</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
+        <Tasks></Tasks>
         <section className="add">
           {/* <button onclick="toggleModalAdd()">+</button> */}
         </section>

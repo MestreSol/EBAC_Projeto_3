@@ -7,4 +7,7 @@ export const item = styled.li`
     text-decoration: none;
     color: black;
   }
+  a:hover {
+    color: blue;
+  }
 `
