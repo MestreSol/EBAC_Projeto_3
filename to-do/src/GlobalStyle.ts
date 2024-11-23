@@ -1,3 +1,51 @@
+import styled, { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #F2F7F2;
+  }
+  .side-menu {
+    width: 20%;
+  height: 100vh;
+  background-color: #f1f1f1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.side-menu h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  margin-bottom: 10px;
+}
+
+.side-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.side-menu ul li a:hover {
+  color: #555;
+}
+
 .side-menu .active {
   background-color: #333;
   color: #f1f1f1;
@@ -164,3 +212,15 @@
 .done button {
   background-color: #d7ffcf;
 }
+
+`
+const Container = styled.div`
+  max-width: 1170px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+`
+
+export default GlobalStyle
+
+export { Container }
