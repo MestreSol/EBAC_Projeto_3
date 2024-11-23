@@ -1,15 +1,14 @@
-import Title from '../../components/Title'
+import Item from '../../components/SideMenu/Item'
+import Title from '../../components/SideMenu/Title'
 
-import { SideMenu as StyledSideMenu } from './style'
+import { SideMenuTags, SideMenu as StyledSideMenu } from './style'
 export default function SideMenu() {
   return (
     <StyledSideMenu>
       <Title>Tags</Title>
-      <ul id="side-menu-tags">
-        <li>
-          <a href="#">🧓 Tag A</a>
-        </li>
-      </ul>
+      <SideMenuTags>
+        <Item tag="/tag/1">Tag 1</Item>
+      </SideMenuTags>
       <input type="button" className="close" id="close" value="X" />
     </StyledSideMenu>
   )

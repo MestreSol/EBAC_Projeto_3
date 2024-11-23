@@ -9,3 +9,8 @@ export const SideMenu = styled.section`
   left: 0;
   padding-top: 20px;
 `
+
+export const SideMenuTags = styled.ul`
+  list-style:none;
+  padding:0px;
+`
