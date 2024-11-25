@@ -3,6 +3,15 @@ import Header from './container/hearder'
 import GlobalStyle, { Container } from './GlobalStyle'
 import SideMenu from './container/side-menu'
 import Tasks from './container/tasks'
+
+type Task = {
+  id: number
+  name: string
+  description: string
+  endDate: string
+  endTime: string
+  tag: string
+}
 function App() {
   useEffect(() => {
     const sideMenu = document.getElementById('sideMenu')
